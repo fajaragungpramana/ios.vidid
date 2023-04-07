@@ -11,7 +11,7 @@ struct SplashView : View {
     var body: some View {
         
         VStack {
-            Text("Vid ID")
+            Text("app_name")
                 .foregroundColor(ColorResource.APP_PRIMARY)
                 .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_32))
         }
