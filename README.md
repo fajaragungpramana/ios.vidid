@@ -4,13 +4,37 @@
 Is application for video streaming.
 
 ## Information
+Language :
 - Swift
 - SwiftUI
+
+Dependency Injection :
 - Swinject
+
+Remote Service :
 - Alamofire
+- RxSwift
+- RxCocoa
+- AlamofireNetworkActivityLogger
+
+Design :
 - Clean Architecture
 - MVVM Pattern
 - Repository Pattern
+
+## Preview
+This preview from application design figma device `Iphone 14 Pro`.
+</br>
+</br>
+SplashView
+</br>
+<img src="https://github.com/fajaragungpramana/assets/blob/master/iOS_Vid_ID/App_Vid_ID.png" width="393" height="852">
+</br>
+MainView
+</br>
+<img src="https://github.com/fajaragungpramana/assets/blob/master/iOS_Vid_ID/App_Vid_ID_Main.png" width="393" height="852">
+</br>
+`Note :` The application on development.
 
 ## Lincense
 Copyright 2023 Fajar Agung Pramana
