@@ -22,7 +22,7 @@ enum TrendingService : URLRequestConvertible {
     var path: String {
         switch self {
         case .getListTrending(let params):
-            return "trending/\(String(describing: params["media_type"]))/\(String(describing: params["time_window"]))"
+            return "trending/\(params["media_type"]!)/\(params["time_window"]!)"
         }
     }
         
@@ -37,7 +37,7 @@ enum TrendingService : URLRequestConvertible {
         let url = try Constant.PRODUCTION_GATEWAY.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
-        urlRequest.url?.append(queryItems: [URLQueryItem(name: "key", value: Constant.KEY_GATEWAY)])
+        urlRequest.url?.append(queryItems: [URLQueryItem(name: "api_key", value: Constant.KEY_GATEWAY)])
             
         let encoding: ParameterEncoding = {
             switch method {
