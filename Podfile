@@ -7,6 +7,8 @@ target 'Vid ID' do
 
   # Pods for Vid ID
   pod 'Alamofire'
+  pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'Swinject'
 
 end
