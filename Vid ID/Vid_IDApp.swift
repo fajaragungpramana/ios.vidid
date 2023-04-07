@@ -11,7 +11,7 @@ import SwiftUI
 struct Vid_IDApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }

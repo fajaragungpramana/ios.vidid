@@ -8,17 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		1822613A29DFC43B0058E1A9 /* Vid_IDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822613929DFC43B0058E1A9 /* Vid_IDApp.swift */; };
-		1822613C29DFC43B0058E1A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822613B29DFC43B0058E1A9 /* ContentView.swift */; };
 		1822613E29DFC43C0058E1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1822613D29DFC43C0058E1A9 /* Assets.xcassets */; };
 		1822614129DFC43C0058E1A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1822614029DFC43C0058E1A9 /* Preview Assets.xcassets */; };
+		1822614829DFC61B0058E1A9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1822614729DFC61B0058E1A9 /* Colors.xcassets */; };
+		1822614A29DFC6FB0058E1A9 /* Drawables.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1822614929DFC6FB0058E1A9 /* Drawables.xcassets */; };
+		1822614F29DFC9EB0058E1A9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822614E29DFC9EB0058E1A9 /* SplashView.swift */; };
+		18BDD57229DFCDE000D84C13 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BDD57129DFCDE000D84C13 /* Poppins-Regular.ttf */; };
+		18BDD57429DFCDEA00D84C13 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BDD57329DFCDEA00D84C13 /* Poppins-SemiBold.ttf */; };
+		18BDD57629DFCE0100D84C13 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BDD57529DFCE0100D84C13 /* Poppins-Medium.ttf */; };
+		18BDD57829DFCECF00D84C13 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD57729DFCECF00D84C13 /* FontResource.swift */; };
+		18BDD57B29DFCF4500D84C13 /* DimenResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD57A29DFCF4500D84C13 /* DimenResource.swift */; };
+		18BDD57D29DFD14300D84C13 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD57C29DFD14300D84C13 /* ColorResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1822613629DFC43B0058E1A9 /* Vid ID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vid ID.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1822613929DFC43B0058E1A9 /* Vid_IDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vid_IDApp.swift; sourceTree = "<group>"; };
-		1822613B29DFC43B0058E1A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1822613D29DFC43C0058E1A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1822614029DFC43C0058E1A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1822614729DFC61B0058E1A9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1822614929DFC6FB0058E1A9 /* Drawables.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Drawables.xcassets; sourceTree = "<group>"; };
+		1822614E29DFC9EB0058E1A9 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		18BDD57029DFCCB900D84C13 /* Vid-ID-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Vid-ID-Info.plist"; sourceTree = SOURCE_ROOT; };
+		18BDD57129DFCDE000D84C13 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		18BDD57329DFCDEA00D84C13 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		18BDD57529DFCE0100D84C13 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		18BDD57729DFCECF00D84C13 /* FontResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontResource.swift; sourceTree = "<group>"; };
+		18BDD57A29DFCF4500D84C13 /* DimenResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimenResource.swift; sourceTree = "<group>"; };
+		18BDD57C29DFD14300D84C13 /* ColorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +68,13 @@
 		1822613829DFC43B0058E1A9 /* Vid ID */ = {
 			isa = PBXGroup;
 			children = (
+				18BDD57029DFCCB900D84C13 /* Vid-ID-Info.plist */,
+				18BDD56A29DFCC2200D84C13 /* Resources */,
+				1822614B29DFC9B00058E1A9 /* Ui */,
 				1822613929DFC43B0058E1A9 /* Vid_IDApp.swift */,
-				1822613B29DFC43B0058E1A9 /* ContentView.swift */,
 				1822613D29DFC43C0058E1A9 /* Assets.xcassets */,
+				1822614929DFC6FB0058E1A9 /* Drawables.xcassets */,
+				1822614729DFC61B0058E1A9 /* Colors.xcassets */,
 				1822613F29DFC43C0058E1A9 /* Preview Content */,
 			);
 			path = "Vid ID";
@@ -65,6 +86,67 @@
 				1822614029DFC43C0058E1A9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1822614B29DFC9B00058E1A9 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				1822614D29DFC9D60058E1A9 /* Main */,
+				1822614C29DFC9C50058E1A9 /* Splash */,
+			);
+			path = Ui;
+			sourceTree = "<group>";
+		};
+		1822614C29DFC9C50058E1A9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1822614E29DFC9EB0058E1A9 /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		1822614D29DFC9D60058E1A9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18BDD56A29DFCC2200D84C13 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18BDD57E29DFD14900D84C13 /* Colors */,
+				18BDD57929DFCF2F00D84C13 /* Dimens */,
+				18BDD56B29DFCC2C00D84C13 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18BDD56B29DFCC2C00D84C13 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18BDD57729DFCECF00D84C13 /* FontResource.swift */,
+				18BDD57529DFCE0100D84C13 /* Poppins-Medium.ttf */,
+				18BDD57129DFCDE000D84C13 /* Poppins-Regular.ttf */,
+				18BDD57329DFCDEA00D84C13 /* Poppins-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		18BDD57929DFCF2F00D84C13 /* Dimens */ = {
+			isa = PBXGroup;
+			children = (
+				18BDD57A29DFCF4500D84C13 /* DimenResource.swift */,
+			);
+			path = Dimens;
+			sourceTree = "<group>";
+		};
+		18BDD57E29DFD14900D84C13 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				18BDD57C29DFD14300D84C13 /* ColorResource.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +207,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1822614829DFC61B0058E1A9 /* Colors.xcassets in Resources */,
+				18BDD57629DFCE0100D84C13 /* Poppins-Medium.ttf in Resources */,
 				1822614129DFC43C0058E1A9 /* Preview Assets.xcassets in Resources */,
 				1822613E29DFC43C0058E1A9 /* Assets.xcassets in Resources */,
+				18BDD57429DFCDEA00D84C13 /* Poppins-SemiBold.ttf in Resources */,
+				1822614A29DFC6FB0058E1A9 /* Drawables.xcassets in Resources */,
+				18BDD57229DFCDE000D84C13 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1822613C29DFC43B0058E1A9 /* ContentView.swift in Sources */,
+				18BDD57D29DFD14300D84C13 /* ColorResource.swift in Sources */,
 				1822613A29DFC43B0058E1A9 /* Vid_IDApp.swift in Sources */,
+				18BDD57829DFCECF00D84C13 /* FontResource.swift in Sources */,
+				1822614F29DFC9EB0058E1A9 /* SplashView.swift in Sources */,
+				18BDD57B29DFCF4500D84C13 /* DimenResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +360,7 @@
 				DEVELOPMENT_TEAM = 7WZ464RT76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Vid-ID-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Vid ID";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -304,6 +395,7 @@
 				DEVELOPMENT_TEAM = 7WZ464RT76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Vid-ID-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Vid ID";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
