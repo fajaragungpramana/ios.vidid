@@ -8,12 +8,6 @@
 import Foundation
 import Alamofire
 
-protocol IMainViewEvent {
+protocol MainViewEvent {
     func getListTrending(request: TrendingRequest)
-}
-
-enum MainViewEvent {
-    case OnLoadingGetListTrending(Bool)
-    case OnSuccessGetListTrending([Trending])
-    case OnFailureGetListTrending(Error)
 }

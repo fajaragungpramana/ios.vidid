@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ColorResource {
     static let APP_PRIMARY = Color("AppPrimary")
+    static let DIVIDER_PRIMARY = Color("DividerPrimary")
     static let TEXT_PRIMARY = Color("TextPrimary")
     static let TEXT_SECONDARY = Color("TextSecondary")
 }
