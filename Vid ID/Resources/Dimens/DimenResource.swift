@@ -8,6 +8,7 @@
 import Foundation
 
 struct DimenResource {
+    static let SIZE_1: CGFloat = 1
     static let SIZE_8: CGFloat = 8
     static let SIZE_10: CGFloat = 10
     static let SIZE_12: CGFloat = 12
@@ -16,4 +17,5 @@ struct DimenResource {
     static let SIZE_24: CGFloat = 24
     static let SIZE_32: CGFloat = 32
     static let SIZE_40: CGFloat = 40
+    static let SIZE_240: CGFloat = 240
 }

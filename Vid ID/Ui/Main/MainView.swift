@@ -41,6 +41,20 @@ struct MainView : View {
             .frame(height: DimenResource.SIZE_40, alignment: .center)
             .padding([.horizontal], DimenResource.SIZE_16)
             
+            // MARK: Vertical Scroll Main
+            ScrollView {
+                VStack {
+                    
+                    // MARK: Line Divider
+                    Rectangle()
+                        .fill(ColorResource.DIVIDER_PRIMARY)
+                        .frame(width: DimenResource.SIZE_240, height: DimenResource.SIZE_1)
+                    
+                }
+            }
+            .frame(height: .infinity)
+            .padding([.top], DimenResource.SIZE_16)
+            
         }
         .navigationBarBackButtonHidden(true)
         .onAppear {
