@@ -28,7 +28,7 @@ struct MainView : View {
                 
                 Image(DrawableResource.IC_SEARCH)
                     .padding([.vertical, .trailing], DimenResource.SIZE_8)
-                    .padding([.leading], DimenResource.SIZE_12)
+                    .padding(.leading, DimenResource.SIZE_12)
                 
                 TextField("find_your_favorite_here", text: $mSearchQuery)
                     .foregroundColor(ColorResource.TEXT_PRIMARY)
@@ -39,7 +39,7 @@ struct MainView : View {
                 cornerRadius: DimenResource.SIZE_10
             ).fill(ColorResource.DIVIDER_PRIMARY))
             .frame(height: DimenResource.SIZE_40, alignment: .center)
-            .padding([.horizontal], DimenResource.SIZE_16)
+            .padding(.horizontal, DimenResource.SIZE_16)
             
             // MARK: Vertical Scroll Main
             ScrollView {
@@ -49,6 +49,28 @@ struct MainView : View {
                     Rectangle()
                         .fill(ColorResource.DIVIDER_PRIMARY)
                         .frame(width: DimenResource.SIZE_240, height: DimenResource.SIZE_1)
+                    
+                    // MARK: Menu Trending With Action See All
+                    HStack {
+                        
+                        Text("trending")
+                            .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_20))
+                        
+                        Spacer()
+                        
+                        Button {
+                            
+                        } label: {
+                            
+                            Text("see_all")
+                                .foregroundColor(ColorResource.APP_PRIMARY)
+                                .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_12))
+                            
+                        }
+                        
+                    }
+                    .frame(width: .infinity)
+                    .padding(.horizontal, DimenResource.SIZE_16)
                     
                 }
             }
