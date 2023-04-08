@@ -37,11 +37,20 @@ final class Injection {
         container.register(TrendingRepository.self) { r in
             TrendingRepositoryImpl(appCLient: r.resolve(AppClient.self)!)
         }
+        container.register(SeriesRepository.self) { r in
+            SeriesRepositoryImpl(appCLient: r.resolve(AppClient.self)!)
+        }
         
         // Domain
         container.register(TrendingUseCase.self) { r in
             TrendingInteractor(
                 trendingRepository: r.resolve(TrendingRepository.self)!,
+                disposeBag: r.resolve(DisposeBag.self)!
+            )
+        }
+        container.register(SeriesUseCase.self) { r in
+            SeriesInteractor(
+                seriesRepository: r.resolve(SeriesRepository.self)!,
                 disposeBag: r.resolve(DisposeBag.self)!
             )
         }

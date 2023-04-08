@@ -10,4 +10,5 @@ import Alamofire
 
 protocol MainViewEvent {
     func getListTrending(request: TrendingRequest)
+    func getListSeriesPopular(request: SeriesPopularRequest)
 }
