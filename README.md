@@ -21,6 +21,7 @@ Design :
 - Clean Architecture
 - MVVM Pattern
 - Repository Pattern
+- Localization
 
 ## Preview
 This preview from application design figma device `Iphone 14 Pro`.
