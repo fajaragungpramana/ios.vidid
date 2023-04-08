@@ -7,17 +7,13 @@
 
 import SwiftUI
 import AlamofireNetworkActivityLogger
-import RxSwift
 
 struct MainView : View {
     
-    @Injected private var mDisposeBag: DisposeBag
+    @StateObject private var mViewModel = MainViewModel()
     
-    @ObservedObject private var mViewModel = MainViewModel()
-    
+    // MARK: State
     @State private var mSearchQuery: String = ""
-    
-    @State private var mListTrending: [Trending] = []
     
     var body: some View {
         
@@ -82,21 +78,37 @@ struct MainView : View {
                         
                         HStack {
                             
-                            ForEach(mListTrending, id: \.id) { trending in
+                            ForEach(mViewModel.getListTrendingData(), id: \.id) { trending in
                                 
                                 ZStack(alignment: .bottomLeading) {
                                     
-                                    Image(trending.posterPath)
-                                        .scaledToFit()
-                                        .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150)
+                                    AsyncImage(
+                                        url: URL(string: trending.posterPath), content: { image in
+                                            image
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                        },
+                                        placeholder: {
+                                            ProgressView()
+                                        }
+                                    )
+                                    .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150)
+                                    
+                                    Rectangle()
+                                        .fill(
+                                            LinearGradient(gradient: Gradient(colors: [.clear, ColorResource.TEXT_PRIMARY]), startPoint: .top, endPoint: .bottom)
+                                        )
+                                        .opacity(0.8)
                                     
                                     VStack(alignment: .leading) {
                                         
                                         Text(trending.title)
+                                            .foregroundColor(.white)
                                             .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_14))
                                         
                                         Text(trending.overview)
                                             .lineLimit(1)
+                                            .foregroundColor(.white)
                                             .font(.custom(FontResource.POPPINS_REGULAR, size: DimenResource.SIZE_14))
                                         
                                     }
@@ -104,36 +116,13 @@ struct MainView : View {
                                     .padding([.horizontal, .bottom], DimenResource.SIZE_16)
                                     
                                 }
-                                .background(RoundedRectangle(
-                                    cornerRadius: DimenResource.SIZE_10
-                                ).fill(ColorResource.DIVIDER_PRIMARY))
+                                .cornerRadius(DimenResource.SIZE_10)
                                 .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150, alignment: .leading)
                                 .padding(.leading, DimenResource.SIZE_16)
                                 
                             }
                             
                         }
-                        
-                    }
-                    .onAppear {
-                        
-                        self.mViewModel.getMainViewState().subscribe { event in
-                            let state = event.element
-                            
-                            switch state {
-                            case .OnLoadingGetListTrending(let isLoading):
-                                print("Hello Loading : \(isLoading)")
-                            case .OnSuccessGetListTrending(let data):
-                                self.mListTrending.removeAll()
-                                self.mListTrending = data
-                            case .OnFailureGetListTrending(let error):
-                                print("Hello Failure : \(error)")
-                                
-                            default:
-                                break
-                            }
-                            
-                        }.disposed(by: self.mDisposeBag)
                         
                     }
                     
