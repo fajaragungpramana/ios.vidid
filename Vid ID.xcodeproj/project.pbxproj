@@ -38,6 +38,14 @@
 		1822614F29DFC9EB0058E1A9 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1822614E29DFC9EB0058E1A9 /* SplashView.swift */; };
 		18A8D2F629E19E130077DC8A /* TitleMenuActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D2F529E19E130077DC8A /* TitleMenuActionView.swift */; };
 		18A8D2F829E1A3730077DC8A /* TrendingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D2F729E1A3720077DC8A /* TrendingCardView.swift */; };
+		18A8D2FD29E1AD5D0077DC8A /* SeriesPopularResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D2FC29E1AD5D0077DC8A /* SeriesPopularResponse.swift */; };
+		18A8D2FF29E1B02A0077DC8A /* SeriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D2FE29E1B02A0077DC8A /* SeriesService.swift */; };
+		18A8D30229E1B0DA0077DC8A /* SeriesPopularRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D30129E1B0DA0077DC8A /* SeriesPopularRequest.swift */; };
+		18A8D30429E1B1A10077DC8A /* SeriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D30329E1B1A10077DC8A /* SeriesRepository.swift */; };
+		18A8D30629E1B1F80077DC8A /* SeriesRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D30529E1B1F80077DC8A /* SeriesRepositoryImpl.swift */; };
+		18A8D30A29E1B2C70077DC8A /* SeriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D30929E1B2C70077DC8A /* SeriesUseCase.swift */; };
+		18A8D30D29E1B2DA0077DC8A /* SeriesPopular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D30C29E1B2DA0077DC8A /* SeriesPopular.swift */; };
+		18A8D30F29E1B3F70077DC8A /* SeriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8D30E29E1B3F70077DC8A /* SeriesInteractor.swift */; };
 		18BDD57229DFCDE000D84C13 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BDD57129DFCDE000D84C13 /* Poppins-Regular.ttf */; };
 		18BDD57429DFCDEA00D84C13 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BDD57329DFCDEA00D84C13 /* Poppins-SemiBold.ttf */; };
 		18BDD57629DFCE0100D84C13 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BDD57529DFCE0100D84C13 /* Poppins-Medium.ttf */; };
@@ -81,6 +89,14 @@
 		185E8D1834FAA98D3E2EBC88 /* Pods-Vid ID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vid ID.debug.xcconfig"; path = "Target Support Files/Pods-Vid ID/Pods-Vid ID.debug.xcconfig"; sourceTree = "<group>"; };
 		18A8D2F529E19E130077DC8A /* TitleMenuActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleMenuActionView.swift; sourceTree = "<group>"; };
 		18A8D2F729E1A3720077DC8A /* TrendingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCardView.swift; sourceTree = "<group>"; };
+		18A8D2FC29E1AD5D0077DC8A /* SeriesPopularResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPopularResponse.swift; sourceTree = "<group>"; };
+		18A8D2FE29E1B02A0077DC8A /* SeriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesService.swift; sourceTree = "<group>"; };
+		18A8D30129E1B0DA0077DC8A /* SeriesPopularRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPopularRequest.swift; sourceTree = "<group>"; };
+		18A8D30329E1B1A10077DC8A /* SeriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRepository.swift; sourceTree = "<group>"; };
+		18A8D30529E1B1F80077DC8A /* SeriesRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesRepositoryImpl.swift; sourceTree = "<group>"; };
+		18A8D30929E1B2C70077DC8A /* SeriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesUseCase.swift; sourceTree = "<group>"; };
+		18A8D30C29E1B2DA0077DC8A /* SeriesPopular.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesPopular.swift; sourceTree = "<group>"; };
+		18A8D30E29E1B3F70077DC8A /* SeriesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesInteractor.swift; sourceTree = "<group>"; };
 		18BDD57029DFCCB900D84C13 /* Vid-ID-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Vid-ID-Info.plist"; sourceTree = SOURCE_ROOT; };
 		18BDD57129DFCDE000D84C13 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		18BDD57329DFCDEA00D84C13 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -127,6 +143,7 @@
 		180192AA29E01E57005075ED /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				18A8D2FA29E1AC100077DC8A /* Series */,
 				180192B129E02574005075ED /* Trending */,
 			);
 			path = Remote;
@@ -181,6 +198,7 @@
 		180192C529E040EB005075ED /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				18A8D30729E1B2840077DC8A /* Series */,
 				180192C629E04103005075ED /* Trending */,
 			);
 			path = Domain;
@@ -312,6 +330,52 @@
 				18A8D2F729E1A3720077DC8A /* TrendingCardView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18A8D2FA29E1AC100077DC8A /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				18A8D30029E1B0C50077DC8A /* Request */,
+				18A8D2FB29E1AC1C0077DC8A /* Response */,
+				18A8D2FE29E1B02A0077DC8A /* SeriesService.swift */,
+				18A8D30329E1B1A10077DC8A /* SeriesRepository.swift */,
+				18A8D30529E1B1F80077DC8A /* SeriesRepositoryImpl.swift */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		18A8D2FB29E1AC1C0077DC8A /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				18A8D2FC29E1AD5D0077DC8A /* SeriesPopularResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		18A8D30029E1B0C50077DC8A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				18A8D30129E1B0DA0077DC8A /* SeriesPopularRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		18A8D30729E1B2840077DC8A /* Series */ = {
+			isa = PBXGroup;
+			children = (
+				18A8D30B29E1B2CD0077DC8A /* Model */,
+				18A8D30929E1B2C70077DC8A /* SeriesUseCase.swift */,
+				18A8D30E29E1B3F70077DC8A /* SeriesInteractor.swift */,
+			);
+			path = Series;
+			sourceTree = "<group>";
+		};
+		18A8D30B29E1B2CD0077DC8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18A8D30C29E1B2DA0077DC8A /* SeriesPopular.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18BDD56A29DFCC2200D84C13 /* Resources */ = {
@@ -490,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A8D2FD29E1AD5D0077DC8A /* SeriesPopularResponse.swift in Sources */,
 				180192D429E04555005075ED /* DoubleExtension.swift in Sources */,
 				18F6B3F529E1515D002675B9 /* DrawableResource.swift in Sources */,
 				180192DE29E04AD7005075ED /* AppInjection.swift in Sources */,
@@ -503,10 +568,15 @@
 				180192E029E05299005075ED /* MainViewEvent.swift in Sources */,
 				1822613A29DFC43B0058E1A9 /* Vid_IDApp.swift in Sources */,
 				18BDD57829DFCECF00D84C13 /* FontResource.swift in Sources */,
+				18A8D30629E1B1F80077DC8A /* SeriesRepositoryImpl.swift in Sources */,
+				18A8D30F29E1B3F70077DC8A /* SeriesInteractor.swift in Sources */,
 				180192D629E04593005075ED /* BoolExtension.swift in Sources */,
+				18A8D30A29E1B2C70077DC8A /* SeriesUseCase.swift in Sources */,
 				180192B329E02585005075ED /* TrendingService.swift in Sources */,
 				180192C129E03D6E005075ED /* TrendingRepositoryImpl.swift in Sources */,
 				1822614F29DFC9EB0058E1A9 /* SplashView.swift in Sources */,
+				18A8D30229E1B0DA0077DC8A /* SeriesPopularRequest.swift in Sources */,
+				18A8D2FF29E1B02A0077DC8A /* SeriesService.swift in Sources */,
 				18A8D2F829E1A3730077DC8A /* TrendingCardView.swift in Sources */,
 				180192CA29E0416E005075ED /* AppResult.swift in Sources */,
 				180192CD29E04294005075ED /* Trending.swift in Sources */,
@@ -514,7 +584,9 @@
 				180192C429E03E87005075ED /* TrendingRequest.swift in Sources */,
 				180192D829E04662005075ED /* TrendingInteractor.swift in Sources */,
 				180192BD29E036E9005075ED /* AppResponse.swift in Sources */,
+				18A8D30D29E1B2DA0077DC8A /* SeriesPopular.swift in Sources */,
 				180192D229E04513005075ED /* StringExtension.swift in Sources */,
+				18A8D30429E1B1A10077DC8A /* SeriesRepository.swift in Sources */,
 				180192BA29E02D11005075ED /* TrendingRepository.swift in Sources */,
 				180192DA29E04972005075ED /* MainViewModel.swift in Sources */,
 				18BDD57B29DFCF4500D84C13 /* DimenResource.swift in Sources */,

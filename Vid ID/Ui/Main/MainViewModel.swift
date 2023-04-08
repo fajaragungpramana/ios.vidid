@@ -10,13 +10,21 @@ import RxSwift
 import RxCocoa
 
 class MainViewModel : ObservableObject, MainViewEvent {
-    
+ 
     @Injected private var mTrendingUseCase: TrendingUseCase
+    @Injected private var mSeriesUseCase: SeriesUseCase
+    
     @Injected private var mDisposeBag: DisposeBag
     
+    // MARK: Trending
     @Published private var mListTrendingLoading: Bool = false
     @Published private var mListTrendingData: [Trending] = []
     @Published private var mListTrendingError: String = ""
+    
+    // MARK: Series
+    @Published private var mListSeriesPopularLoading: Bool = false
+    @Published private var mListSeriesPopularData: [SeriesPopular] = []
+    @Published private var mListSeriesPopularError: String = ""
     
     func getListTrending(request: TrendingRequest) {
         self.mTrendingUseCase.getListTrending(request: request).subscribe { event in
@@ -37,6 +45,26 @@ class MainViewModel : ObservableObject, MainViewEvent {
         }.disposed(by: self.mDisposeBag)
     }
     
+    func getListSeriesPopular(request: SeriesPopularRequest) {
+        self.mSeriesUseCase.getListPopular(request: request).subscribe { event in
+            let state = event.element
+            
+            switch state {
+            case .OnLoading(let isLoading):
+                self.mListSeriesPopularLoading = isLoading
+            case .OnSuccess(let data):
+                self.mListSeriesPopularData = data
+            case .OnFailure(let error):
+                self.mListSeriesPopularError = error.localizedDescription
+                
+            default:
+                break
+            }
+            
+        }.disposed(by: self.mDisposeBag)
+    }
+    
+    // MARK: Trending State
     func getListTrendingLoading() -> Bool {
         return self.mListTrendingLoading
     }
@@ -47,6 +75,19 @@ class MainViewModel : ObservableObject, MainViewEvent {
     
     func getListTrendingError() -> String {
         return self.mListTrendingError
+    }
+    
+    // MARK: Series Popular State
+    func getListSeriesPopularLoading() -> Bool {
+        return self.mListSeriesPopularLoading
+    }
+    
+    func getListSeriesPopularData() -> [SeriesPopular] {
+        return self.mListSeriesPopularData
+    }
+    
+    func getListSeriesPopularError() -> String {
+        return self.mListSeriesPopularError
     }
     
 }

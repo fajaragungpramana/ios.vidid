@@ -88,6 +88,8 @@ struct MainView : View {
                 mediaType: .ALL,
                 timeWindow: .WEEK)
             )
+            
+            self.mViewModel.getListSeriesPopular(request: SeriesPopularRequest())
         }
         
     }

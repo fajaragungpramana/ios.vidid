@@ -18,7 +18,7 @@ class TrendingRepositoryImpl : TrendingRepository {
     }
     
     func getListTrending(request: TrendingRequest) -> Observable<AppResponse<[TrendingResponse]>> {
-        mAppClient.request(TrendingService.getListTrending(params: request.toRequest()))
+        return self.mAppClient.request(TrendingService.getListTrending(params: request.toRequest()))
     }
     
 }
