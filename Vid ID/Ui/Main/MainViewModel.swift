@@ -7,23 +7,30 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class MainViewModel : ObservableObject, IMainViewEvent {
     
     @Injected private var mTrendingUseCase: TrendingUseCase
     @Injected private var mDisposeBag: DisposeBag
 
+    private let mMainViewState = BehaviorRelay<MainViewEvent>(value: .OnLoadingGetListTrending(false))
+    
+    func getMainViewState() -> BehaviorRelay<MainViewEvent> {
+        return self.mMainViewState
+    }
+    
     func getListTrending(request: TrendingRequest) {
         self.mTrendingUseCase.getListTrending(request: request).subscribe { event in
             let state = event.element
             
             switch state {
             case .OnLoading(let isLoading):
-                print("Hello OnLoading : \(isLoading)")
+                self.mMainViewState.accept(.OnLoadingGetListTrending(isLoading))
             case .OnSuccess(let data):
-                print("Hello OnSuccess : \(data)")
+                self.mMainViewState.accept(.OnSuccessGetListTrending(data))
             case .OnFailure(let error):
-                print("Hello OnFailure : \(error)")
+                self.mMainViewState.accept(.OnFailureGetListTrending(error))
                 
             default:
                 break

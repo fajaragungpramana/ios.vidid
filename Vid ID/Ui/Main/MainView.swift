@@ -7,12 +7,17 @@
 
 import SwiftUI
 import AlamofireNetworkActivityLogger
+import RxSwift
 
 struct MainView : View {
+    
+    @Injected private var mDisposeBag: DisposeBag
     
     @ObservedObject private var mViewModel = MainViewModel()
     
     @State private var mSearchQuery: String = ""
+    
+    @State private var mListTrending: [Trending] = []
     
     var body: some View {
         
@@ -72,6 +77,66 @@ struct MainView : View {
                     .frame(width: .infinity)
                     .padding(.horizontal, DimenResource.SIZE_16)
                     
+                    // MARK: Trending Card List
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        
+                        HStack {
+                            
+                            ForEach(mListTrending, id: \.id) { trending in
+                                
+                                ZStack(alignment: .bottomLeading) {
+                                    
+                                    Image(trending.posterPath)
+                                        .scaledToFit()
+                                        .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150)
+                                    
+                                    VStack(alignment: .leading) {
+                                        
+                                        Text(trending.title)
+                                            .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_14))
+                                        
+                                        Text(trending.overview)
+                                            .lineLimit(1)
+                                            .font(.custom(FontResource.POPPINS_REGULAR, size: DimenResource.SIZE_14))
+                                        
+                                    }
+                                    .frame(width: .infinity)
+                                    .padding([.horizontal, .bottom], DimenResource.SIZE_16)
+                                    
+                                }
+                                .background(RoundedRectangle(
+                                    cornerRadius: DimenResource.SIZE_10
+                                ).fill(ColorResource.DIVIDER_PRIMARY))
+                                .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150, alignment: .leading)
+                                .padding(.leading, DimenResource.SIZE_16)
+                                
+                            }
+                            
+                        }
+                        
+                    }
+                    .onAppear {
+                        
+                        self.mViewModel.getMainViewState().subscribe { event in
+                            let state = event.element
+                            
+                            switch state {
+                            case .OnLoadingGetListTrending(let isLoading):
+                                print("Hello Loading : \(isLoading)")
+                            case .OnSuccessGetListTrending(let data):
+                                self.mListTrending.removeAll()
+                                self.mListTrending = data
+                            case .OnFailureGetListTrending(let error):
+                                print("Hello Failure : \(error)")
+                                
+                            default:
+                                break
+                            }
+                            
+                        }.disposed(by: self.mDisposeBag)
+                        
+                    }
+                    
                 }
             }
             .frame(height: .infinity)
@@ -82,6 +147,11 @@ struct MainView : View {
         .onAppear {
             NetworkActivityLogger.shared.level = .debug
             NetworkActivityLogger.shared.startLogging()
+            
+            self.mViewModel.getListTrending(request: TrendingRequest(
+                mediaType: .ALL,
+                timeWindow: .WEEK)
+            )
         }
         
     }
