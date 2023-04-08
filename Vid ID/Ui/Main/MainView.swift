@@ -52,84 +52,31 @@ struct MainView : View {
                         .frame(width: DimenResource.SIZE_240, height: DimenResource.SIZE_1)
                     
                     // MARK: Menu Trending With Action See All
-                    HStack {
+                    TitleMenuActionView(title: LocalizedStringKey("trending"), onClickActionListener: {
                         
-                        Text("trending")
-                            .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_20))
-                        
-                        Spacer()
-                        
-                        Button {
-                            
-                        } label: {
-                            
-                            Text("see_all")
-                                .foregroundColor(ColorResource.APP_PRIMARY)
-                                .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_12))
-                            
-                        }
-                        
-                    }
-                    .frame(width: .infinity)
-                    .padding(.horizontal, DimenResource.SIZE_16)
+                    })
                     
                     // MARK: Trending Card List
                     ScrollView(.horizontal, showsIndicators: false) {
-                        
                         HStack {
                             
                             ForEach(mViewModel.getListTrendingData(), id: \.id) { trending in
-                                
-                                ZStack(alignment: .bottomLeading) {
-                                    
-                                    AsyncImage(
-                                        url: URL(string: trending.posterPath), content: { image in
-                                            image
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fill)
-                                        },
-                                        placeholder: {
-                                            ProgressView()
-                                        }
-                                    )
-                                    .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150)
-                                    
-                                    Rectangle()
-                                        .fill(
-                                            LinearGradient(gradient: Gradient(colors: [.clear, ColorResource.TEXT_PRIMARY]), startPoint: .top, endPoint: .bottom)
-                                        )
-                                        .opacity(0.8)
-                                    
-                                    VStack(alignment: .leading) {
-                                        
-                                        Text(trending.title)
-                                            .foregroundColor(.white)
-                                            .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_14))
-                                        
-                                        Text(trending.overview)
-                                            .lineLimit(1)
-                                            .foregroundColor(.white)
-                                            .font(.custom(FontResource.POPPINS_REGULAR, size: DimenResource.SIZE_14))
-                                        
-                                    }
-                                    .frame(width: .infinity)
-                                    .padding([.horizontal, .bottom], DimenResource.SIZE_16)
-                                    
-                                }
-                                .cornerRadius(DimenResource.SIZE_10)
-                                .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150, alignment: .leading)
-                                .padding(.leading, DimenResource.SIZE_16)
-                                
+                                TrendingCardView(trending: trending)
                             }
                             
                         }
-                        
                     }
+                    
+                    // MARK: Menu Series With Action See All
+                    TitleMenuActionView(title: LocalizedStringKey("series"), onClickActionListener: {
+                        
+                    })
+                    .padding(.top, DimenResource.SIZE_8)
                     
                 }
             }
             .frame(height: .infinity)
-            .padding([.top], DimenResource.SIZE_16)
+            .padding(.top, DimenResource.SIZE_16)
             
         }
         .navigationBarBackButtonHidden(true)
