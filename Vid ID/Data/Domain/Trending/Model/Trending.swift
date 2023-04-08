@@ -20,7 +20,7 @@ struct Trending {
             data.append(
                 Trending(
                     id: trendingResponse.id.onNull(),
-                    posterPath: trendingResponse.posterPath.onNull(),
+                    posterPath: "\(Constant.PRODUCTION_IMAGE_GATEWAY)\(trendingResponse.posterPath.onNull())",
                     title: trendingResponse.title.onNull(),
                     overview: trendingResponse.overview.onNull())
             )

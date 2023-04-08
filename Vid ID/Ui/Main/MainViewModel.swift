@@ -9,16 +9,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class MainViewModel : ObservableObject, IMainViewEvent {
+class MainViewModel : ObservableObject, MainViewEvent {
     
     @Injected private var mTrendingUseCase: TrendingUseCase
     @Injected private var mDisposeBag: DisposeBag
-
-    private let mMainViewState = BehaviorRelay<MainViewEvent>(value: .OnLoadingGetListTrending(false))
     
-    func getMainViewState() -> BehaviorRelay<MainViewEvent> {
-        return self.mMainViewState
-    }
+    @Published private var mListTrendingLoading: Bool = false
+    @Published private var mListTrendingData: [Trending] = []
+    @Published private var mListTrendingError: String = ""
     
     func getListTrending(request: TrendingRequest) {
         self.mTrendingUseCase.getListTrending(request: request).subscribe { event in
@@ -26,17 +24,29 @@ class MainViewModel : ObservableObject, IMainViewEvent {
             
             switch state {
             case .OnLoading(let isLoading):
-                self.mMainViewState.accept(.OnLoadingGetListTrending(isLoading))
+                self.mListTrendingLoading = isLoading
             case .OnSuccess(let data):
-                self.mMainViewState.accept(.OnSuccessGetListTrending(data))
+                self.mListTrendingData = data
             case .OnFailure(let error):
-                self.mMainViewState.accept(.OnFailureGetListTrending(error))
+                self.mListTrendingError = error.localizedDescription
                 
             default:
                 break
             }
             
         }.disposed(by: self.mDisposeBag)
+    }
+    
+    func getListTrendingLoading() -> Bool {
+        return self.mListTrendingLoading
+    }
+    
+    func getListTrendingData() -> [Trending] {
+        return self.mListTrendingData
+    }
+    
+    func getListTrendingError() -> String {
+        return self.mListTrendingError
     }
     
 }
