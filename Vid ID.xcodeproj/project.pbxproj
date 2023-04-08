@@ -42,6 +42,7 @@
 		18BDD57829DFCECF00D84C13 /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD57729DFCECF00D84C13 /* FontResource.swift */; };
 		18BDD57B29DFCF4500D84C13 /* DimenResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD57A29DFCF4500D84C13 /* DimenResource.swift */; };
 		18BDD57D29DFD14300D84C13 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BDD57C29DFD14300D84C13 /* ColorResource.swift */; };
+		18F6B3F529E1515D002675B9 /* DrawableResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6B3F429E1515D002675B9 /* DrawableResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		18BDD57729DFCECF00D84C13 /* FontResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontResource.swift; sourceTree = "<group>"; };
 		18BDD57A29DFCF4500D84C13 /* DimenResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimenResource.swift; sourceTree = "<group>"; };
 		18BDD57C29DFD14300D84C13 /* ColorResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResource.swift; sourceTree = "<group>"; };
+		18F6B3F429E1515D002675B9 /* DrawableResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawableResource.swift; sourceTree = "<group>"; };
 		1FEA5415E38A9FC4235F44E0 /* Pods_Vid_ID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vid_ID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,8 +240,8 @@
 		1822613829DFC43B0058E1A9 /* Vid ID */ = {
 			isa = PBXGroup;
 			children = (
-				180192DC29E04AC8005075ED /* App */,
 				18BDD57029DFCCB900D84C13 /* Vid-ID-Info.plist */,
+				180192DC29E04AC8005075ED /* App */,
 				180192A929E01E4B005075ED /* Data */,
 				180192CE29E04458005075ED /* Extension */,
 				18BDD56A29DFCC2200D84C13 /* Resources */,
@@ -293,6 +295,7 @@
 		18BDD56A29DFCC2200D84C13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18F6B3F329E15148002675B9 /* Drawables */,
 				18BDD57E29DFD14900D84C13 /* Colors */,
 				18BDD57929DFCF2F00D84C13 /* Dimens */,
 				18BDD56B29DFCC2C00D84C13 /* Fonts */,
@@ -325,6 +328,14 @@
 				18BDD57C29DFD14300D84C13 /* ColorResource.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		18F6B3F329E15148002675B9 /* Drawables */ = {
+			isa = PBXGroup;
+			children = (
+				18F6B3F429E1515D002675B9 /* DrawableResource.swift */,
+			);
+			path = Drawables;
 			sourceTree = "<group>";
 		};
 		CBA51276478BF660E1F39A23 /* Frameworks */ = {
@@ -458,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180192D429E04555005075ED /* DoubleExtension.swift in Sources */,
+				18F6B3F529E1515D002675B9 /* DrawableResource.swift in Sources */,
 				180192DE29E04AD7005075ED /* AppInjection.swift in Sources */,
 				18BDD57D29DFD14300D84C13 /* ColorResource.swift in Sources */,
 				180192A829E01B88005075ED /* MainView.swift in Sources */,
