@@ -60,7 +60,7 @@ struct MainView : View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             
-                            ForEach(mViewModel.getListTrendingData(), id: \.id) { trending in
+                            ForEach(self.mViewModel.getListTrendingData(), id: \.id) { trending in
                                 TrendingCardView(trending: trending)
                             }
                             
@@ -72,6 +72,17 @@ struct MainView : View {
                         
                     })
                     .padding(.top, DimenResource.SIZE_8)
+                    
+                    // MARK: Series Card List
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            
+                            ForEach(self.mViewModel.getListSeriesPopularData(), id: \.id) { seriesPopular in
+                                SeriesCardView(seriesPopular: seriesPopular)
+                            }
+                            
+                        }
+                    }
                     
                 }
             }

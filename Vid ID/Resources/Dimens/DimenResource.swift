@@ -18,7 +18,9 @@ struct DimenResource {
     static let SIZE_24: CGFloat = 24
     static let SIZE_32: CGFloat = 32
     static let SIZE_40: CGFloat = 40
+    static let SIZE_120: CGFloat = 120
     static let SIZE_150: CGFloat = 150
+    static let SIZE_180: CGFloat = 180
     static let SIZE_240: CGFloat = 240
     static let SIZE_300: CGFloat = 300
 }

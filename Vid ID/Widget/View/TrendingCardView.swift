@@ -50,7 +50,7 @@ struct TrendingCardView : View {
             
         }
         .cornerRadius(DimenResource.SIZE_10)
-        .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150, alignment: .leading)
+        .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150)
         .padding(.leading, DimenResource.SIZE_16)
         
     }
