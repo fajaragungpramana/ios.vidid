@@ -43,7 +43,7 @@ struct MainView : View {
             .padding(.horizontal, DimenResource.SIZE_16)
             
             // MARK: Vertical Scroll Main
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     
                     // MARK: Line Divider
@@ -84,6 +84,16 @@ struct MainView : View {
                         }
                     }
                     
+                    // MARK: Menu Movies With Action See All
+                    TitleMenuActionView(title: LocalizedStringKey("movies"), onClickActionListener: {
+                        
+                    })
+                    .padding(.top, DimenResource.SIZE_8)
+                    
+                    ForEach(self.mViewModel.getListMoviePopularData(), id: \.id) { moviePopular in
+                        MovieCardView(moviePopular: moviePopular)
+                    }
+                    
                 }
             }
             .frame(height: .infinity)
@@ -101,6 +111,8 @@ struct MainView : View {
             )
             
             self.mViewModel.getListSeriesPopular(request: SeriesPopularRequest())
+            
+            self.mViewModel.getListMoviePopular(request: MoviePopularRequest())
         }
         
     }

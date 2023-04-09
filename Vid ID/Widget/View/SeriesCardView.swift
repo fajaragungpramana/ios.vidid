@@ -33,7 +33,7 @@ struct SeriesCardView : View {
                 )
                 .opacity(0.8)
             
-            Text(seriesPopular.originalName)
+            Text(seriesPopular.name)
                 .foregroundColor(.white)
                 .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_14))
                 .padding([.horizontal, .bottom], DimenResource.SIZE_16)

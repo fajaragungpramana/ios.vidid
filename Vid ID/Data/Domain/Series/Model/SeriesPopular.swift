@@ -10,7 +10,7 @@ import Foundation
 struct SeriesPopular {
     var id: Int
     var posterPath: String
-    var originalName: String
+    var name: String
     
     static func mapList(listSeriesPopularResponse: [SeriesPopularResponse]?) -> [SeriesPopular] {
         var data = [SeriesPopular]()
@@ -20,7 +20,7 @@ struct SeriesPopular {
                 SeriesPopular(
                     id: seriesPopularResponse.id.onNull(),
                     posterPath: "\(Constant.PRODUCTION_IMAGE_GATEWAY)\(seriesPopularResponse.posterPath.onNull())",
-                    originalName: seriesPopularResponse.originalName.onNull()
+                    name: seriesPopularResponse.name.onNull()
                 )
             )
         }
