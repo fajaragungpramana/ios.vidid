@@ -40,6 +40,9 @@ final class Injection {
         container.register(SeriesRepository.self) { r in
             SeriesRepositoryImpl(appCLient: r.resolve(AppClient.self)!)
         }
+        container.register(MovieRepository.self) { r in
+            MovieRepositoryImpl(appCLient: r.resolve(AppClient.self)!)
+        }
         
         // Domain
         container.register(TrendingUseCase.self) { r in
@@ -51,6 +54,12 @@ final class Injection {
         container.register(SeriesUseCase.self) { r in
             SeriesInteractor(
                 seriesRepository: r.resolve(SeriesRepository.self)!,
+                disposeBag: r.resolve(DisposeBag.self)!
+            )
+        }
+        container.register(MovieUseCase.self) { r in
+            MovieInteractor(
+                movieRepository: r.resolve(MovieRepository.self)!,
                 disposeBag: r.resolve(DisposeBag.self)!
             )
         }

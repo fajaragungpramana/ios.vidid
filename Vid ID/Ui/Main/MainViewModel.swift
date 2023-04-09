@@ -13,6 +13,7 @@ class MainViewModel : ObservableObject, MainViewEvent {
  
     @Injected private var mTrendingUseCase: TrendingUseCase
     @Injected private var mSeriesUseCase: SeriesUseCase
+    @Injected private var mMovieUseCase: MovieUseCase
     
     @Injected private var mDisposeBag: DisposeBag
     
@@ -25,6 +26,11 @@ class MainViewModel : ObservableObject, MainViewEvent {
     @Published private var mListSeriesPopularLoading: Bool = false
     @Published private var mListSeriesPopularData: [SeriesPopular] = []
     @Published private var mListSeriesPopularError: String = ""
+    
+    // MARK: Movies
+    @Published private var mListMoviePopularLoading: Bool = false
+    @Published private var mListMoviePopularData: [MoviePopular] = []
+    @Published private var mListMoviePopularError: String = ""
     
     func getListTrending(request: TrendingRequest) {
         self.mTrendingUseCase.getListTrending(request: request).subscribe { event in
@@ -64,6 +70,25 @@ class MainViewModel : ObservableObject, MainViewEvent {
         }.disposed(by: self.mDisposeBag)
     }
     
+    func getListMoviePopular(request: MoviePopularRequest) {
+        self.mMovieUseCase.getListPopular(request: request).subscribe { event in
+            let state = event.element
+            
+            switch state {
+            case .OnLoading(let isLoading):
+                self.mListMoviePopularLoading = isLoading
+            case .OnSuccess(let data):
+                self.mListMoviePopularData = data
+            case .OnFailure(let error):
+                self.mListMoviePopularError = error.localizedDescription
+                
+            default:
+                break
+            }
+            
+        }.disposed(by: self.mDisposeBag)
+    }
+    
     // MARK: Trending State
     func getListTrendingLoading() -> Bool {
         return self.mListTrendingLoading
@@ -88,6 +113,19 @@ class MainViewModel : ObservableObject, MainViewEvent {
     
     func getListSeriesPopularError() -> String {
         return self.mListSeriesPopularError
+    }
+    
+    // MARK: Movie Popular State
+    func getListMoviePopularLoading() -> Bool {
+        return self.mListMoviePopularLoading
+    }
+    
+    func getListMoviePopularData() -> [MoviePopular] {
+        return self.mListMoviePopularData
+    }
+    
+    func getListMoviePopularError() -> String {
+        return self.mListMoviePopularError
     }
     
 }

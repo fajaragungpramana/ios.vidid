@@ -1,5 +1,6 @@
 # Vid ID
-![](https://img.shields.io/badge/Swift-5.3_5.4_5.5_5.6_5.7-Orange?style=flat-square) ![](https://img.shields.io/badge/Platforms-iOS-Green?style=flat-square)
+![](https://img.shields.io/badge/Swift-5.3_5.4_5.5_5.6_5.7-Orange?style=flat-square) 
+![](https://img.shields.io/badge/Platforms-iOS-Green?style=flat-square)
 </br>
 Is application for video streaming.
 
@@ -21,6 +22,7 @@ Design :
 - Clean Architecture
 - MVVM Pattern
 - Repository Pattern
+- Localization
 
 ## Preview
 This preview from application design figma device `Iphone 14 Pro`.
@@ -28,11 +30,11 @@ This preview from application design figma device `Iphone 14 Pro`.
 </br>
 SplashView
 </br>
-<img src="https://github.com/fajaragungpramana/assets/blob/master/iOS_Vid_ID/App_Vid_ID.png" width="393" height="852">
+<img src="https://github.com/fajaragungpramana/assets/blob/master/iOS-VidID/SplashView.png" width="393" height="852">
 </br>
 MainView
 </br>
-<img src="https://github.com/fajaragungpramana/assets/blob/master/iOS_Vid_ID/App_Vid_ID_Main.png" width="393" height="852">
+<img src="https://github.com/fajaragungpramana/assets/blob/master/iOS-VidID/MainView.png" width="393" height="852">
 </br>
 `Note :` The application on development.
 

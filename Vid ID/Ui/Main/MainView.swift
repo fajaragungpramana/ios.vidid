@@ -43,7 +43,7 @@ struct MainView : View {
             .padding(.horizontal, DimenResource.SIZE_16)
             
             // MARK: Vertical Scroll Main
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     
                     // MARK: Line Divider
@@ -60,7 +60,7 @@ struct MainView : View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             
-                            ForEach(mViewModel.getListTrendingData(), id: \.id) { trending in
+                            ForEach(self.mViewModel.getListTrendingData(), id: \.id) { trending in
                                 TrendingCardView(trending: trending)
                             }
                             
@@ -72,6 +72,27 @@ struct MainView : View {
                         
                     })
                     .padding(.top, DimenResource.SIZE_8)
+                    
+                    // MARK: Series Card List
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            
+                            ForEach(self.mViewModel.getListSeriesPopularData(), id: \.id) { seriesPopular in
+                                SeriesCardView(seriesPopular: seriesPopular)
+                            }
+                            
+                        }
+                    }
+                    
+                    // MARK: Menu Movies With Action See All
+                    TitleMenuActionView(title: LocalizedStringKey("movies"), onClickActionListener: {
+                        
+                    })
+                    .padding(.top, DimenResource.SIZE_8)
+                    
+                    ForEach(self.mViewModel.getListMoviePopularData(), id: \.id) { moviePopular in
+                        MovieCardView(moviePopular: moviePopular)
+                    }
                     
                 }
             }
@@ -90,6 +111,8 @@ struct MainView : View {
             )
             
             self.mViewModel.getListSeriesPopular(request: SeriesPopularRequest())
+            
+            self.mViewModel.getListMoviePopular(request: MoviePopularRequest())
         }
         
     }
