@@ -8,8 +8,9 @@
 import Foundation
 
 struct SeriesPopular {
+    var id: Int
     var posterPath: String
-    var originalName: String
+    var name: String
     
     static func mapList(listSeriesPopularResponse: [SeriesPopularResponse]?) -> [SeriesPopular] {
         var data = [SeriesPopular]()
@@ -17,8 +18,9 @@ struct SeriesPopular {
         listSeriesPopularResponse?.forEach { seriesPopularResponse in
             data.append(
                 SeriesPopular(
-                    posterPath: seriesPopularResponse.posterPath.onNull(),
-                    originalName: seriesPopularResponse.originalName.onNull()
+                    id: seriesPopularResponse.id.onNull(),
+                    posterPath: "\(Constant.PRODUCTION_IMAGE_GATEWAY)\(seriesPopularResponse.posterPath.onNull())",
+                    name: seriesPopularResponse.name.onNull()
                 )
             )
         }
