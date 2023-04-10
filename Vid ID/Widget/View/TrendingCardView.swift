@@ -49,9 +49,16 @@ struct TrendingCardView : View {
             .padding([.horizontal, .bottom], DimenResource.SIZE_16)
             
         }
+        .background(.white)
         .cornerRadius(DimenResource.SIZE_10)
         .frame(width: DimenResource.SIZE_300, height: DimenResource.SIZE_150)
         .padding(.leading, DimenResource.SIZE_16)
+        .shadow(
+            color: ColorResource.TEXT_PRIMARY.opacity(0.3),
+            radius: DimenResource.SIZE_4,
+            x: 0,
+            y: DimenResource.SIZE_4
+        )
         
     }
     
