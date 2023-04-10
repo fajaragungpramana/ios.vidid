@@ -9,4 +9,5 @@ import Foundation
 
 struct DrawableResource {
     static let IC_SEARCH = "ic_search"
+    static let IC_BACK_BLACK = "ic_back_black"
 }
