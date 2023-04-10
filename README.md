@@ -25,18 +25,20 @@ Design :
 - Localization
 
 ## Preview
-This preview from application design figma device `Iphone 14 Pro`.
+This preview application emulator `Iphone 14 Pro`.
 </br>
 </br>
-SplashView
-</br>
+<b>SplashView</b>
+- Have loading time 3 seconds.
 <img src="https://github.com/fajaragungpramana/assets/blob/master/iOS-VidID/SplashView.png" width="393" height="852">
-</br>
-MainView
-</br>
+
+<b>MainView</b>
+- Have search field, if it clicked navigate to SearchView page.
+- Have List trending and can view all rending in VideoView page.
+- Have List series and can view all rending in VideoView page.
+- Have List movie and can view all rending in VideoView page.
 <img src="https://github.com/fajaragungpramana/assets/blob/master/iOS-VidID/MainView.png" width="393" height="852">
 </br>
-`Note :` The application on development.
 
 ## Lincense
 Copyright 2023 Fajar Agung Pramana
