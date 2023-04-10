@@ -41,6 +41,9 @@ struct MainView : View {
             ).fill(ColorResource.DIVIDER_PRIMARY))
             .frame(height: DimenResource.SIZE_40, alignment: .center)
             .padding(.horizontal, DimenResource.SIZE_16)
+            .onTapGesture {
+                
+            }
             
             // MARK: Vertical Scroll Main
             ScrollView(showsIndicators: false) {
@@ -62,6 +65,7 @@ struct MainView : View {
                             
                             ForEach(self.mViewModel.getListTrendingData(), id: \.id) { trending in
                                 TrendingCardView(trending: trending)
+                                    .padding(.bottom, DimenResource.SIZE_12)
                             }
                             
                         }
@@ -79,6 +83,7 @@ struct MainView : View {
                             
                             ForEach(self.mViewModel.getListSeriesPopularData(), id: \.id) { seriesPopular in
                                 SeriesCardView(seriesPopular: seriesPopular)
+                                    .padding(.bottom, DimenResource.SIZE_12)
                             }
                             
                         }
