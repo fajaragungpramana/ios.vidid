@@ -8,7 +8,6 @@ target 'Vid ID' do
   # Pods for Vid ID
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityLogger', '~> 3.4'
-  pod 'NavigationStack'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Swinject'
