@@ -69,7 +69,7 @@ struct MainView : View {
                         self.mIsSeeAllTrendingTap = true
                     })
                     .navigationDestination(isPresented: $mIsSeeAllTrendingTap) {
-                        VideoView()
+                        VideoView(viewType: .trending)
                     }
                     
                     // MARK: Trending Card List
@@ -90,7 +90,7 @@ struct MainView : View {
                     })
                     .padding(.top, DimenResource.SIZE_8)
                     .navigationDestination(isPresented: $mIsSeeAllSeriesTap) {
-                        VideoView()
+                        VideoView(viewType: .series)
                     }
                     
                     // MARK: Series Card List
@@ -111,7 +111,7 @@ struct MainView : View {
                     })
                     .padding(.top, DimenResource.SIZE_8)
                     .navigationDestination(isPresented: $mIsSeeAllMoviesTap) {
-                        VideoView()
+                        VideoView(viewType: .movies)
                     }
                     
                     ForEach(self.mViewModel.getListMoviePopularData(), id: \.id) { moviePopular in

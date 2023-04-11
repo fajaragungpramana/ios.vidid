@@ -12,4 +12,10 @@ struct Constant {
     
     static let PRODUCTION_GATEWAY = "https://api.themoviedb.org/3/"
     static let PRODUCTION_IMAGE_GATEWAY = "https://image.tmdb.org/t/p/w500"
+    
+    enum ViewType {
+        case trending
+        case series
+        case movies
+    }
 }

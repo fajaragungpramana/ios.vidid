@@ -12,10 +12,18 @@ struct VideoView : View {
     // MARK: Environment
     @Environment(\.presentationMode) private var mMode: Binding<PresentationMode>
     
+    @State private var mPageTitle: LocalizedStringKey = ""
+    
+    var viewType: Constant.ViewType
+    
     var body: some View {
         VStack {
             
-            HStack {
+            ZStack(alignment: .leading) {
+                
+                Rectangle()
+                    .fill(.clear)
+                    .frame(width: .infinity, height: 0)
                 
                 Button {
                     self.mMode.wrappedValue.dismiss()
@@ -25,7 +33,20 @@ struct VideoView : View {
                 }
                 .padding(.horizontal, DimenResource.SIZE_16)
                 
-                Spacer()
+                Text(mPageTitle)
+                    .foregroundColor(ColorResource.TEXT_PRIMARY)
+                    .font(.custom(FontResource.POPPINS_SEMI_BOLD, size: DimenResource.SIZE_20))
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .onAppear {
+                        switch viewType {
+                        case .trending:
+                            self.mPageTitle = LocalizedStringKey("trending")
+                        case .series:
+                            self.mPageTitle = LocalizedStringKey("series")
+                        case .movies:
+                            self.mPageTitle = LocalizedStringKey("movies")
+                        }
+                    }
                 
             }
             
@@ -37,10 +58,4 @@ struct VideoView : View {
         .navigationBarBackButtonHidden(true)
     }
     
-}
-
-struct VideoView_Previews : PreviewProvider {
-    static var previews: some View {
-        VideoView()
-    }
 }
