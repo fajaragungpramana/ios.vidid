@@ -16,6 +16,10 @@ struct MainView : View {
     @State private var mSearchQuery: String = ""
     @State private var mIsSearchFieldTap: Bool = false
     
+    @State private var mIsSeeAllTrendingTap: Bool = false
+    @State private var mIsSeeAllSeriesTap: Bool = false
+    @State private var mIsSeeAllMoviesTap: Bool = false
+    
     var body: some View {
         
         VStack {
@@ -62,8 +66,11 @@ struct MainView : View {
                     
                     // MARK: Menu Trending With Action See All
                     TitleMenuActionView(title: LocalizedStringKey("trending"), onClickActionListener: {
-                        
+                        self.mIsSeeAllTrendingTap = true
                     })
+                    .navigationDestination(isPresented: $mIsSeeAllTrendingTap) {
+                        VideoView()
+                    }
                     
                     // MARK: Trending Card List
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -79,9 +86,12 @@ struct MainView : View {
                     
                     // MARK: Menu Series With Action See All
                     TitleMenuActionView(title: LocalizedStringKey("series"), onClickActionListener: {
-                        
+                        self.mIsSeeAllSeriesTap = true
                     })
                     .padding(.top, DimenResource.SIZE_8)
+                    .navigationDestination(isPresented: $mIsSeeAllSeriesTap) {
+                        VideoView()
+                    }
                     
                     // MARK: Series Card List
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -97,9 +107,12 @@ struct MainView : View {
                     
                     // MARK: Menu Movies With Action See All
                     TitleMenuActionView(title: LocalizedStringKey("movies"), onClickActionListener: {
-                        
+                        self.mIsSeeAllMoviesTap = true
                     })
                     .padding(.top, DimenResource.SIZE_8)
+                    .navigationDestination(isPresented: $mIsSeeAllMoviesTap) {
+                        VideoView()
+                    }
                     
                     ForEach(self.mViewModel.getListMoviePopularData(), id: \.id) { moviePopular in
                         MovieCardView(moviePopular: moviePopular)
